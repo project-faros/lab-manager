@@ -38,6 +38,7 @@ void hypervisor_lkp(LookupItem* env)
 int main(int argc, char **argv) {
     LookupItem env;
     FILE* remf;
+    char ssh_cmd[120];
     char buffer[1000];
     int j;
 
@@ -49,6 +50,7 @@ int main(int argc, char **argv) {
     setuid(0);
 
     // create commands
+    sprintf(ssh_cmd, "ssh %s.lab.faros.site", env.hypervisor);
     j = 0;
     j += sprintf(buffer+j, "echo 'shutting down hub vm'\n");
     j += sprintf(buffer+j, "virsh destroy --domain %s\n", env.vm_name);
@@ -60,7 +62,7 @@ int main(int argc, char **argv) {
     j += sprintf(buffer+j, "echo 'complete'\n");
 
     // reset environment
-    remf = popen("ssh virt-0.lab.faros.site", "w");
+    remf = popen(ssh_cmd, "w");
     if (!remf) { perror("popen ssh failed"); return(1); };
     fprintf(remf, buffer);
     fclose(remf);
