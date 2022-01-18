@@ -1,0 +1,20 @@
+#!/bin/bash
+basedir=$(dirname $0)
+
+USAGE="""
+lab SUBCOMMAND
+
+Automations for common actions in the lab.
+
+SUBCOMMANDS:
+$(ls -d $basedir/_lab_* | sed "s|$basedir/_lab_||g")
+"""
+
+cmd="$basedir/_lab_$1/main.sh"
+if [ ! -f $cmd ]; then
+    echo "$USAGE"
+    exit 1
+fi
+
+shift
+source "$cmd" $@
