@@ -17,10 +17,13 @@ $description
   $(tput sitm)DHCP Pool:$(tput sgr0) $subnet.10-100
 
   $(tput bold)Hub Cluster$(tput sgr0)
+  $(tput sitm)Host:$(tput sgr0) hub.$env.faros.site
   $(tput sitm)Console URL:$(tput sgr0) https://console-openshift-console.apps.hub.$env.faros.site
   $(tput sitm)Admin Username:$(tput sgr0) farosadmin
   $(tput sitm)Admin Password:$(tput sgr0) R3dH4tRock\$
-  $(tput sitm)Admin Kubeconfig:$(tput sgr0) /home/kubeconfigs/kubeconfig.$env
+  $(tput sitm)Admin Kubeconfig:$(tput sgr0) /home/kubeconfigs/$env/kubeconfig
+  $(tput sitm)SSH Private Key:$(tput sgr0) /home/kubeconfigs/$env/id_rsa
+  $(tput sitm)SSH Public Key:$(tput sgr0) /home/kubeconfigs/$env/id_rsa.pub
 
   $(tput bold)Spoke Cluster$(tput sgr0)
   $(tput sitm)Chassis Manager:$(tput sgr0) https://cm.$env.faros.site
