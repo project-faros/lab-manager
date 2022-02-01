@@ -13,7 +13,7 @@ $description
   $(tput bold)Network Information$(tput sgr0)
   $(tput sitm)Subnet:$(tput sgr0) $subnet.0/24
   $(tput sitm)Gateway:$(tput sgr0) $subnet.1
-  $(tput sitm)DNS:$(tput sgr0) $subnet.5
+  $(tput sitm)DNS: 172.16.1.5
   $(tput sitm)DHCP Pool:$(tput sgr0) $subnet.10-100
 
   $(tput bold)Hub Cluster$(tput sgr0)
