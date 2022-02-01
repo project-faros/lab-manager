@@ -33,6 +33,8 @@ $description
   $(tput sitm)Node 3 iLO:$(tput sgr0) https://node-3-mgmt.$env.faros.site
   $(tput sitm)iLO Admin Username:$(tput sgr0) farosadmin
   $(tput sitm)iLO Admin Password:$(tput sgr0) R3dH4tRock\$
+  $(tput sitm)Cluster VIP:$(tput sgr0) $subnet.8
+  $(tput sitm)Cluster Name:$(tput sgr0) cluster
 
 """
 }
